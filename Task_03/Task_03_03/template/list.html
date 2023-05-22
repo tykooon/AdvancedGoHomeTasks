@@ -1,0 +1,29 @@
+{{define "title"}}List of Todo Tasks{{end}}
+{{define "scripts"}}{{end}}
+{{define "body"}}
+<div class="m-2 p-3 shadow bg-white" style="border-radius:5px;">
+  <h2 class="my-3">List of Todo Tasks</h2>
+  <table class="table table-striped table-sm table-bordered">
+      <thead>
+          <tr class="border-bottom border-2 border-secondary fw-bolder">
+              <td style="width: 5%;">No.</td>
+              <td style="width: 45%;">Task</td>
+              <td style="width: 10%;">Status</td>
+              <td>Started</td>
+              <td>Finished</td>              
+          </tr>
+      </thead>
+      <tbody>
+        {{ range $index, $task := . }}
+        <tr>
+          <td>{{ $task.Id }}</td>
+          <td class="fw-bold">{{ $task.Name }}</td>
+          <td>{{ statusconv $task.IsCompleted }}</td>
+          <td>{{ timeformat $task.Created }}</td>
+          <td>{{ timeformat $task.Finished }}</td>
+        </tr>
+        {{ end }}
+      </tbody>
+  </table>
+</div>
+{{end}}

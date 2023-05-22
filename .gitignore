@@ -1,0 +1,7 @@
+.bash_history
+.vscode/
+test/
+
+*.zip
+
+Original solutions/

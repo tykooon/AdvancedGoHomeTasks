@@ -1,0 +1,27 @@
+{{define "title"}}User Information{{end}}
+{{define "scripts"}}{{end}}
+{{define "body"}}
+<div class="mt-3 mx-auto p-3 shadow bg-white" style="border-radius:5px;max-width: 576px;">
+  <h2 class="my-3"> {{.FullName}} Information</h2>
+  <table class="table table-sm border-0">
+      <tbody>
+        <tr>
+          <td class="fw-semibold">UserId:</td>
+          <td>{{ .Id }}</td>
+        </tr>
+        <tr>
+          <td class="fw-semibold">Full Name:</td>
+          <td>{{ .FullName }}</td>
+        </tr>
+        <tr>
+          <td class="fw-semibold">Email:</td>
+          <td>{{ .Email }}</td>
+        </tr>
+        <tr>
+          <td class="fw-semibold">Status:</td>
+          <td>{{if .IsActive}} Active {{ else }} Not Active {{end}}</td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+{{end}}
